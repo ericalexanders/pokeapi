@@ -12,12 +12,15 @@ const MiniCard = ({ name, url }: Props) => {
   const [image, setImage] = React.useState<string>();
 
   React.useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((pokeData) => {
-        const img = pokeData.sprites.other.dream_world.front_default;
-        setImage(img);
-      });
+    const fetchImg = () => {
+      fetch(url)
+        .then((res) => res.json())
+        .then((pokeData) => {
+          const img = pokeData.sprites.other.dream_world.front_default;
+          setImage(img);
+        });
+    };
+    fetchImg();
   }, [url]);
 
   return (
