@@ -26,7 +26,7 @@ const options = [
 ];
 
 const PokemonList = () => {
-  const [orderBy, setOrderBy] = React.useState("reverse");
+  const [orderBy, setOrderBy] = React.useState("default");
   const { pokemons, isLoading, isFetching, fetchNextPage } =
     useGetAllPokemons();
 
