@@ -30,21 +30,24 @@ const PokemonList = () => {
   const { pokemons, isLoading, isFetching, fetchNextPage } =
     useGetAllPokemons();
 
-  function handleScroll(e: any): void {
-    if (
-      window.innerHeight + e.target.documentElement.scrollTop + 2 >=
-      e.target.documentElement.scrollHeight
-    ) {
-      fetchNextPage();
-    }
-  }
+  const handleScroll = React.useCallback(
+    (e: any): void => {
+      if (
+        window.innerHeight + e.target.documentElement.scrollTop + 2 >=
+        e.target.documentElement.scrollHeight
+      ) {
+        fetchNextPage();
+      }
+    },
+    [fetchNextPage]
+  );
 
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   const pokemonsOrdered = sortPokemons[orderBy];
 
