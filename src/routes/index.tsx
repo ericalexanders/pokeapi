@@ -8,7 +8,7 @@ const routes = [
     element: <Home />,
   },
   {
-    path: "/details",
+    path: "/details/:pokemonName",
     exact: true,
     element: <Details />,
   },
