@@ -17,8 +17,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header />
         <BrowserRouter>
+          <Header />
           <Routes>
             {routes.map((props) => (
               <Route key={props.path} {...props} />
