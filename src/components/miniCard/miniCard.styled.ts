@@ -6,8 +6,9 @@ export const SmallCard = styled.div`
   background-color: #3761a8;
   width: 280px;
   border-radius: 12px;
+  border: 1px solid #f1f1f1;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 24px;
-  margin: 12px;
+  margin: 10px;
   padding: 8px;
   padding-left: 20px;
   padding-right: 20px;
